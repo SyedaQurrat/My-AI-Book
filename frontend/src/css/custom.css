@@ -1,0 +1,117 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* You can override the default Infima variables here. */
+:root {
+  --ifm-color-primary: #1a73e8; /* Google-style blue for tech/robotics */
+  --ifm-color-primary-dark: #1557b0;
+  --ifm-color-primary-darker: #134da3;
+  --ifm-color-primary-darkest: #0f3d85;
+  --ifm-color-primary-light: #3d8bfe;
+  --ifm-color-primary-lighter: #5ba1fe;
+  --ifm-color-primary-lightest: #7bb8ff;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+
+  /* Additional custom colors for robotics theme */
+  --robotics-accent: #ff6b35; /* Orange for highlights */
+  --robotics-secondary: #4a4a4a; /* Dark gray for text */
+  --robotics-background: #f8f9fa; /* Light background */
+}
+
+/* Enhanced styling for robotics theme */
+.hero.hero--primary {
+  background: linear-gradient(135deg, var(--ifm-color-primary) 0%, var(--ifm-color-primary-darker) 100%);
+}
+
+/* Styling for code blocks */
+.docusaurus-highlight-code-line {
+  background-color: rgba(0, 0, 0, 0.1);
+  display: block;
+  margin: 0 calc(-1 * var(--ifm-pre-padding));
+  padding: 0 var(--ifm-pre-padding);
+}
+
+/* Enhanced table styling */
+.markdown table {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+}
+
+.markdown table th,
+.markdown table td {
+  border: 1px solid var(--ifm-color-emphasis-300);
+  padding: 0.75rem 1rem;
+  text-align: left;
+}
+
+.markdown table th {
+  background-color: var(--ifm-color-emphasis-100);
+  font-weight: 600;
+}
+
+/* Enhanced button styling */
+.button--secondary {
+  background-color: var(--robotics-accent);
+  border-color: var(--robotics-accent);
+  color: white;
+}
+
+.button--secondary:hover {
+  background-color: #e05a2a;
+  border-color: #e05a2a;
+  color: white;
+}
+
+/* Enhanced sidebar navigation */
+.menu__list-item-collapsible:hover,
+.menu__link:hover {
+  background-color: rgba(26, 115, 232, 0.1);
+}
+
+/* Enhanced footer styling */
+.footer {
+  background-color: var(--ifm-color-primary-darkest);
+  color: white;
+}
+
+.footer a {
+  color: var(--ifm-color-primary-lightest);
+}
+
+.footer a:hover {
+  color: white;
+}
+
+/* Enhanced code block styling */
+.prism-code {
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 996px) {
+  .hero__title {
+    font-size: 2rem !important;
+  }
+
+  .hero__subtitle {
+    font-size: 1.2rem !important;
+  }
+}
+
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+[data-theme='dark'] {
+  --ifm-color-primary: #25c2a0;
+  --ifm-color-primary-dark: #21af90;
+  --ifm-color-primary-darker: #1fa588;
+  --ifm-color-primary-darkest: #1a8870;
+  --ifm-color-primary-light: #29d5b0;
+  --ifm-color-primary-lighter: #32d8b4;
+  --ifm-color-primary-lightest: #4fddbf;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}

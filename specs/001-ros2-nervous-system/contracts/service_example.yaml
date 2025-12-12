@@ -1,0 +1,64 @@
+# Service Contract: Add Two Ints Example
+
+## Overview
+This contract defines the interface for the "Add Two Ints" service example that demonstrates ROS 2 service-based communication.
+
+## Service Server Node: `service_server`
+
+### Interface
+- **Node Name**: `service_server`
+- **Provided Services**:
+  - `/add_two_ints` (type: `example_interfaces/srv/AddTwoInts`)
+
+### Request Format
+```yaml
+a: int64  # First integer to add
+b: int64  # Second integer to add
+```
+
+### Response Format
+```yaml
+sum: int64  # The sum of a and b
+```
+
+### Behavior
+- Waits for service requests on `/add_two_ints`
+- Computes the sum of the two input integers
+- Returns the result to the client
+- Continues running until node is shut down
+
+## Service Client Node: `service_client`
+
+### Interface
+- **Node Name**: `service_client`
+- **Service Clients**:
+  - `/add_two_ints` (type: `example_interfaces/srv/AddTwoInts`)
+
+### Request Format
+```yaml
+a: int64  # First integer to add
+b: int64  # Second integer to add
+```
+
+### Response Format
+```yaml
+sum: int64  # The sum of a and b
+```
+
+### Behavior
+- Calls the `/add_two_ints` service with sample values
+- Waits for and receives the response
+- Logs the result to console
+- Continues running until node is shut down
+
+## Service Contract
+- **Service Name**: `/add_two_ints`
+- **Service Type**: `example_interfaces/srv/AddTwoInts`
+- **Communication Pattern**: One-to-one (client to server)
+
+## Expected Behavior
+When both nodes are running:
+1. Client node sends a request to add two integers (e.g., 2 + 3)
+2. Server node receives the request and computes the sum
+3. Server node sends the result back to the client
+4. Client node receives and logs the result (e.g., "Sum: 5")

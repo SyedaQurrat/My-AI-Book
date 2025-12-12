@@ -1,0 +1,50 @@
+# Publisher/Subscriber Contract: Hello World Example
+
+## Overview
+This contract defines the interface for the "Hello World" publisher/subscriber example that demonstrates ROS 2 topic-based communication.
+
+## Publisher Node: `publisher_node`
+
+### Interface
+- **Node Name**: `publisher_node`
+- **Published Topics**:
+  - `/hello_world` (type: `std_msgs/msg/String`)
+
+### Message Format
+```yaml
+data: string  # The message content, e.g., "Hello World"
+```
+
+### Behavior
+- Publishes a "Hello World" message every 2 seconds
+- Uses QoS profile: Reliable, Keep Last 10
+- Continues publishing until node is shut down
+
+## Subscriber Node: `subscriber_node`
+
+### Interface
+- **Node Name**: `subscriber_node`
+- **Subscribed Topics**:
+  - `/hello_world` (type: `std_msgs/msg/String`)
+
+### Message Format
+```yaml
+data: string  # The received message content
+```
+
+### Behavior
+- Subscribes to `/hello_world` topic
+- Logs received messages to console
+- Continues subscribing until node is shut down
+
+## Topic Contract
+- **Topic Name**: `/hello_world`
+- **Message Type**: `std_msgs/msg/String`
+- **QoS Profile**: Reliable, Keep Last 10
+- **Communication Pattern**: One-to-many (publisher to multiple subscribers)
+
+## Expected Behavior
+When both nodes are running:
+1. Publisher node sends "Hello World" messages every 2 seconds
+2. Subscriber node receives and logs each message
+3. Multiple subscribers can connect to the same topic
